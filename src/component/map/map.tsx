@@ -3,8 +3,7 @@ import { DirectionsRenderer, DirectionsService, GoogleMap, OverlayView, useJsApi
 import { useRideContext } from "../../context/rideContext";
 import { useSocketContext } from "../../context/socketContext";
 import carIcon from "../../assets/car.webp"; // Import the car image
-import { Location } from "../../icons/location";
-
+import userLocation from "../../assets/userLocation.png"
 const containerStyle = {
     width: "100%",
     height: "400px",
@@ -16,8 +15,8 @@ const CustomMarker: React.FC<{ position: google.maps.LatLngLiteral }> = () => (
     </div>
 );
 const UserMarker: React.FC<{ position: google.maps.LatLngLiteral }> = () => (
-    <div className="h-20 w-20" style={{ transform: "translate(-50%, -100%)" }}> {/* Increased size */}
-        <Location/>
+    <div className="h-12 w-12" style={{ transform: "translate(-50%, -100%)" }}> {/* Increased size */}
+       <img className="h-12 " src={userLocation} alt="" />
     </div>
 );
 interface MapProps {
@@ -61,7 +60,6 @@ const Map: React.FC<MapProps> = ({ userType }) => {
                 socketId: userType === "user" ? rideContext.rideGlobal.captain.socketId : rideContext.rideGlobal.user.socketId,
                 location: userLocation,
             });
-            setDirections(null); // Reset directions when rideGlobal changes
         }
     }, [userLocation, rideContext.rideGlobal]);
 
