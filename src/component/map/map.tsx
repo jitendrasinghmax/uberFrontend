@@ -10,12 +10,12 @@ const containerStyle = {
     height: "400px",
 };
 
-const CustomMarker: React.FC<{ position: google.maps.LatLngLiteral }> = ({ position }) => (
+const CustomMarker: React.FC<{ position: google.maps.LatLngLiteral }> = () => (
     <div style={{ transform: "translate(-50%, -100%)" }}>
         <img src={carIcon} alt="Car Icon" className="h-12 w-12" /> {/* Increased size */}
     </div>
 );
-const UserMarker: React.FC<{ position: google.maps.LatLngLiteral }> = ({ position }) => (
+const UserMarker: React.FC<{ position: google.maps.LatLngLiteral }> = () => (
     <div className="h-20 w-20" style={{ transform: "translate(-50%, -100%)" }}> {/* Increased size */}
         <Location/>
     </div>

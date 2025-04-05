@@ -39,21 +39,6 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         };
     }, []);
 
-    const sendMessage = (eventName: string, data: any) => {
-        if (socket) {
-            socket.emit(eventName, data);
-        } else {
-            console.error("Socket is not connected.");
-        }
-    };
-
-    const onMessage = (eventName: string, callback: (data: any) => void) => {
-        if (socket) {
-            socket.on(eventName, callback);
-        } else {
-            console.error("Socket is not connected.");
-        }
-    };
 
     return (
         <SocketContext.Provider value={{ socket,isConnected }}>

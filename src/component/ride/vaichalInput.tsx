@@ -1,6 +1,5 @@
-import React, { Dispatch, SetStateAction, useEffect,  } from "react";
+import { Dispatch, SetStateAction, useEffect,  } from "react";
 import { LeftArrow } from "../../icons/leftArrow";
-import { Button } from "../ui/button";
 import { useFetch } from "../../hook/userFetch";
 import { useUserRideContext } from "../../context/userRideContext";
 import { Loader } from "../loader/loader";
@@ -32,7 +31,7 @@ export const VechileInput = ({vachialPanal, setVechialPanal , setConfirmVachialP
             icon: "🛺", // Placeholder for auto icon
         },
     ];
-    const {resp,error,loading,reFetch}=useFetch();
+    const {resp,loading,reFetch}=useFetch();
     const userRideContext=useUserRideContext();
     useEffect(()=>{
         if(vachialPanal){

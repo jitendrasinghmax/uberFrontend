@@ -23,7 +23,7 @@ export const CaptainHome = () => {
 
     const mapPanalRef = useRef(null);
     const requestRef = useRef(null);
-    const { reFetch, resp, loading, error } = useFetch();
+    const { reFetch, resp, error } = useFetch();
     const confirmRide=useFetch();
     const startRide=useFetch();
     const endRide=useFetch();
@@ -99,7 +99,8 @@ export const CaptainHome = () => {
             }
         }
         const locationInterval=setInterval(updateLocation,10000);
-        updateLocation()        
+        updateLocation()
+        return ()=>clearInterval(locationInterval)        
     },[captain?.captain])
     socket?.on('new-ride',(data)=>{
         setRides(data)
@@ -134,7 +135,7 @@ export const CaptainHome = () => {
                 {rides&&<div ref={requestRef} className="flex flex-col gap-y-3 px-4 relative  bg-white top-0 w-full">
                     
                     {
-                        [1].map((info, index) => {
+                        [1].map(() => {
                             return <div className="w-full h-fit p-4  bg-gray-100 rounded-xl">
                                 <div>
                                     <h1>pick up- {rides.pickup}</h1>

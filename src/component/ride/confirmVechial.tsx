@@ -1,12 +1,9 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { LeftArrow } from "../../icons/leftArrow";
 import { Button } from "../ui/button";
-import { FaCar, FaMoneyBill } from "react-icons/fa";
-import { RiMotorbikeFill } from "react-icons/ri";
-import { Auto } from "../../icons/auto";
+import { FaMoneyBill } from "react-icons/fa";
 import { useUserRideContext } from "../../context/userRideContext";
 import { Location } from "../../icons/location";
-import { useFetch } from "../../hook/userFetch";
 
 const ConfirmVehicle = ({setConfirmVachialPanal,setWaitingPanal}:{setConfirmVachialPanal:Dispatch<SetStateAction<boolean>>,setWaitingPanal:Dispatch<SetStateAction<boolean>>}) => {
     const userRideContext=useUserRideContext();

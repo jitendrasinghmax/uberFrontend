@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { LeftArrow } from "../../icons/leftArrow";
 
 export const VechileInput = ({ setVechialPanal }: { setVechialPanal: Dispatch<SetStateAction<boolean>> }) => {

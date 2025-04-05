@@ -6,7 +6,7 @@ export const Start = () => {
     const naviagte=useNavigate();
   return (
     <div className="h-screen">
-       <div className="flex flex-col justify-between justify-center h-full pb-4 px-2">
+       <div className="flex flex-col justify-between items-center h-full pb-4 px-2">
         <div className="flex flex-col justify-center items-center h-full">
             <h1 className="text-5xl font-extrabold">UBER</h1>
         </div>
