@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "../../component/ui/input";
 import { Button } from "../../component/ui/button";
 import { useFetch } from "../../hook/userFetch";

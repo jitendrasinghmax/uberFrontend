@@ -1,12 +1,11 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect } from "react"
 import { Location } from "../../icons/location";
 import { useUserRideContext } from "../../context/userRideContext";
 import { useFetch } from "../../hook/userFetch";
 
 export const Suggesation=({isActive,value,setValue}:{isActive:string,value:{pickup:string,destination:string},setValue:Dispatch<SetStateAction<{pickup:string,destination:string}>>})=>{
     const userRideContext=useUserRideContext();
-    const [locations,setLocations]=useState([]);
-    const {resp,error,loading,reFetch}=useFetch();
+    const {resp,reFetch}=useFetch();
     const locationHandeler=(location:string)=>{
         userRideContext?.setUserRideInfo((prev)=>{
             return{...prev,[isActive]:location}

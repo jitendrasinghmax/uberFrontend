@@ -4,7 +4,6 @@ import { Input } from "../../component/ui/input";
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hook/userFetch";
 import hotTost from "../../notification/hot.tost";
-import { useCaptainContext, CaptainContextType } from "../../context/captainContext";
 
 export const SignIn = () => {
     const navigate = useNavigate();

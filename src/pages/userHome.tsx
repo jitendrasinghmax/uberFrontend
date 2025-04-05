@@ -23,7 +23,7 @@ export const UserHome = () => {
     const vechialPanalRef = useRef(null);
     const confirmVechialRef = useRef(null);
     const waitingPanalRef = useRef(null)
-    const { reFetch, resp, loading, error } = useFetch();
+    const { reFetch, resp, error } = useFetch();
     const user: UserContextType | undefined = userContext();
     const { socket } = useSocketContext()
     const rideContext = useRideContext()
