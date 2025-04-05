@@ -14,8 +14,9 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const [isConnected, setIsConnected] = useState(false);
 
     useEffect(() => {
-        const socketInstance = io(import.meta.env.BASE_URL, {
-            transports: ["websocket"],
+        const socketInstance = io(import.meta.env.VITE_BACKEND_URL, { // Use the correct environment variable
+            transports: ["websocket", "polling"], // Ensure fallback to polling if WebSocket fails
+            withCredentials: true, // Allow credentials if needed
         });
 
         setSocket(socketInstance);
