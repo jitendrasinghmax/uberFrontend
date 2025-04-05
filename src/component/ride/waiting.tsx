@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { LeftArrow } from "../../icons/leftArrow";
 import { Button } from "../ui/button";
 import { useFetch } from "../../hook/userFetch";
@@ -9,7 +9,7 @@ import { useSocketContext } from "../../context/socketContext";
 const LookingForDriver = ({ waitingPanal, setWaitingPanal }: { waitingPanal: boolean, setWaitingPanal: Dispatch<SetStateAction<boolean>> }) => {
     const [ride, setRide] = useState<any>()
     const userRideContext = useUserRideContext()
-    const { resp, error, loading, reFetch } = useFetch();
+    const {  loading, reFetch } = useFetch();
     const endRide = useFetch()
     const { socket } = useSocketContext()
     useEffect(() => {
