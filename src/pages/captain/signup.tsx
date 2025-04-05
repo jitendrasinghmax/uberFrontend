@@ -20,7 +20,7 @@ export const SignUp = () => {
   const {reFetch,resp,error,loading}=useFetch();
   const [isError,setError]=useState<any>();
   const [message,setMessage]=useState<string|null>();
-  const captain:CaptainContextType|null=useCaptainContext()
+  const captain:CaptainContextType=useCaptainContext()
   const formHandeler=(e:React.ChangeEvent<HTMLInputElement>)=>{
     const {value,name}=e.target;
     setFormData((prev)=>{

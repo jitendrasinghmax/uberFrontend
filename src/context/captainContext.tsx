@@ -26,5 +26,10 @@ export const CaptainProvider = ({ children }:{children:ReactNode}) => {
     );
 };
 
-export const useCaptainContext = () => useContext(CaptainContext);
- 
+export const useCaptainContext = (): CaptainContextType => {
+    const context = useContext(CaptainContext);
+    if (!context) {
+        throw new Error("useCaptainContext must be used within a CaptainProvider");
+    }
+    return context;
+};
